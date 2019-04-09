@@ -1,0 +1,113 @@
+{
+    "computers" : [
+        {
+            "id": "1",
+            "brand": "ASUS K55",
+            "cpu": "Intel",
+            "repair": "Enkel",
+            "screen":"15.6 tum",
+            "price":"5000",
+            "url":"./images/asus.jpg"
+        },
+        {
+            "id": "2",
+            "brand": "Apple Macbook",
+            "cpu": "Intel",
+            "repair": "Svår",
+            "screen":"11.6 tum",
+            "price":"35000",
+            "url":"./images/macbook.jpg"  
+        },
+        {
+            "id": "3",
+            "brand": "Samsung NP",
+            "cpu": "Exynos",
+            "repair": "Medel",
+            "screen":"20 tum",
+            "price":"8000",
+            "url":"./images/samsung.jpg"
+        },
+        {
+            "id": "4",
+            "brand": "Batcomputer",
+            "cpu": "Wayneprocessor",
+            "repair": "Ingen info",
+            "screen":"1000 tum",
+            "price":"500000",
+            "url":"./images/batcomputer.jpg"
+        },
+        {
+            "id": "5",
+            "brand": "LG",
+            "cpu": "AMD",
+            "repair": "Medel",
+            "screen":"14 tum",
+            "price":"2000",
+            "url":"./images/lg.jpg"
+        },
+        {
+            "id": "6",
+            "brand": "Macintosh II",
+            "cpu": "IBM",
+            "repair": "Medel",
+            "screen":"5 tum",
+            "price":"100",
+            "url":"./images/machintosh.jpg"
+        },
+        {
+            "id": "7",
+            "brand": "ThinkPad T61",
+            "cpu": "Intel",
+            "repair": "Medel",
+            "screen":"14 tum",
+            "price":"3000",
+            "url":"./images/thinkpad.jpg"
+        },
+        {
+            "id": "8",
+            "brand": "Huawei Mate",
+            "cpu": "KIRIN",
+            "repair": "Svårt",
+            "screen":"20 tum",
+            "price":"9999",
+            "url":"./images/huawei.jpg"
+        },
+        {
+            "id": "9",
+            "brand": "Alienware",
+            "cpu": "AMD",
+            "repair": "Enkel",
+            "screen":"15.6 tum",
+            "price":"10000",
+            "url":"./images/alienware.jpg"
+        },
+        {
+            "id": "10",
+            "brand": "DELL XPS",
+            "cpu": "Intel",
+            "repair": "Medel",
+            "screen":"10.6tum",
+            "price":"5000",
+            "url":"./images/dell.jpg"
+        },
+        {
+            "id": "11",
+            "brand": "WATSON S",
+            "cpu": "IBM",
+            "repair": "Svår",
+            "screen":"0 tum",
+            "price":"10000",
+            "url":"./images/watson.jpg"
+        },
+        {
+            "id": "12",
+            "brand": "Raspberry Pi",
+            "cpu": "ARM",
+            "repair": "Lätt",
+            "screen":"0 tum",
+            "price":"500",
+            "url":"./images/rasberrypi.jpeg"
+        }
+    ]
+    
+}
