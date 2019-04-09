@@ -1,3 +1,3 @@
 # computercity
-# https://burhanbudak.github.io/computercity.github.io/
+# https://burhanbudak.github.io/computercity
 #Detta är ett projektarbete
