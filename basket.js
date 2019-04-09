@@ -18,6 +18,46 @@ $(document).ready(function(){
     $btncheckout = $('#btncheckout');
     
     let count = 0;
+
+    //Hämtar från databasen
+    $.ajax({
+        url: "demo.json",
+        dataType: "json",
+        success: function(data) {
+        createItems(data.computers);
+        }
+    });
+    
+
+    //Skapar innehållet
+    function createItems(...items) {
+        let data = items[0];
+        $.each(data , function (i,item) {
+        $footer.before(
+            `<article  class="items" id="item${item.id}">
+            <h3 id="title">${item.brand}</h3>
+            <img src="${item.url}" alt="computer" class="rounded">
+            <p id='${item.price}'>${item.price} kr</p>
+            <ul id="specifikation">
+            <li>CPU: ${item.cpu}</li>
+            <li>Lagning: ${item.repair}</li>
+            <li>Storlek: ${item.screen}</li>
+            </ul>
+            <div class="input-group">
+                <select class="custom-select" id="select">
+                        <option selected value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                </select>
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">Lägg till</button>
+            </div>
+            </div>
+            </article>`
+        )
+        });   
+    }//createItems
+
     addBack();
 
 
@@ -79,44 +119,7 @@ $(document).ready(function(){
     }
         
 
-    //Hämtar från databasen
-    $.ajax({
-        url: "demo.json",
-        dataType: "json",
-        success: function(data) {
-        createItems(data.computers);
-        }
-    });
     
-
-    //Skapar innehållet
-    function createItems(...items) {
-        let data = items[0];
-        $.each(data , function (i,item) {
-        $footer.before(
-            `<article  class="items" id="item${item.id}">
-            <h3 id="title">${item.brand}</h3>
-            <img src="${item.url}" alt="computer" class="rounded">
-            <p id='${item.price}'>${item.price} kr</p>
-            <ul id="specifikation">
-            <li>CPU: ${item.cpu}</li>
-            <li>Lagning: ${item.repair}</li>
-            <li>Storlek: ${item.screen}</li>
-            </ul>
-            <div class="input-group">
-                <select class="custom-select" id="select">
-                        <option selected value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                </select>
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button">Lägg till</button>
-            </div>
-            </div>
-            </article>`
-        )
-        });   
-    }//createItems
     
     $basket.click('click', function () {
         $overlay.addClass('.open').slideToggle(300).css('display','grid');

@@ -5,9 +5,26 @@ $(document).ready(function(){
      $total = $('#total');
      $submit = $('.btn');
 
-     $submit.click('click', function(e){
-        e.preventDefault();
-     });
+   //   $submit.click('click', function(e){
+   //      e.preventDefault();
+   //   });
+     (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        let forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        let validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
 
     function fillList() {
         let total = 0;
