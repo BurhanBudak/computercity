@@ -30,82 +30,57 @@
                 </tbody>
               </table>
               <div class="font-weight-bold" id="total"></div>
-              <form class="needs-validation" novalidate>
-                <div class="form-row">
-                  <div class="col-md-4 mb-3">
-                    <label for="validationCustom01">Namn</label>
-                    <input type="text" class="form-control" id="validationCustom01" placeholder="Förnamn" required>
-                    <div class="invalid-feedback">
-                        Du får bara ange bokstäver
-                      </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <label for="validationCustom02">Efternamn</label>
-                    <input type="email" class="form-control" id="validationCustom02" placeholder="Efternamn" required>
-                    <div class="invalid-feedback">
-                        Du får bara ange bokstäver
-                      </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <label for="validationCustom03">Telefon nummer</label>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                      </div>
-                      <input type="tel" class="form-control" id="validationCustom03" placeholder="Telefon" aria-describedby="inputGroupPrepend" required>
-                      <div class="invalid-feedback">
-                        Du får bara ange nummer.
-                      </div>
+              
+              
+              <form action=""https://formspree.io/budak.burhan@gmail.com" method="POST" class="main-form needs-validation" novalidate>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="name">Förnamn och efternamn</label>
+                            <input type="text" name="name" id="name" class="form-control">
+                            <p class="invalid-feedback">Ange ditt namn</p>
+                        </div>
                     </div>
-                  </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="number">Telefonnummer</label>
+                            <input type="text" name="number" id="number" pattern="[0-9]+" title="number only" class="form-control">
+                            <p class="invalid-feedback">Ange ett giltigt telefonnummer</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="form-row">
-                  <div class="col-md-6 mb-3">
-                    <label for="validationCustom03">Adress</label>
-                    <input type="text" class="form-control" id="validationCustom04" placeholder="Ort" required>
+                <div class="row">
+                  <div class="col">
+                      <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" name="email" id="email" class="form-control" required>
+                      <p class="invalid-feedback">Ange en email adress</p>
+                      </div>
                   </div>
-                  
-                  <div class="col-md-3 mb-3">
-                    <label for="validationCustom04">Ort</label>
-                    <input type="text" class="form-control" id="validationCustom05" placeholder="Land" required>
-                    <div class="invalid-feedback">
-                      Ange ditt land.
-                    </div>
+                  <div class="col">
+                      <div class="form-group">
+                          <label for="adress">Adress</label>
+                          <input type="text" name="adress" id="adress" class="form-control">
+                          <p class="invalid-feedback">Ange en gatuadress</p>
+                      </div>
                   </div>
+              </div>
+                
+          
+          
+              
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+     </div>
 
-                  <div class="col-md-3 mb-3">
-                    <label for="validationCustom05">Postnummer</label>
-                    <input type="text" class="form-control" id="validationCustom06" pattern="\d{3}\s?\d{2}" placeholder="Postnummer" required>
-                    <div class="invalid-feedback">
-                      Ange ett riktigt postnummer.
-                    </div>
-                  </div>
-                </div>
 
-                <div class="form-group">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label" for="invalidCheck">
-                            Acceptera användarvillkor.
-                    </label>
-                    <div class="invalid-feedback">
-                      Du måste acceptera våra användarvillkor.
-                    </div>
-                  </div>
-                </div>
-
-                <button class="btn btn-primary" type="submit">Skicka beställning</button>
-              </form>
-        </div>
-        <aside class="overlay">
-            <div class="preview">
-            </div>
-        </aside>
     <footer class="footer">
             <h2>&copy; Burhan Budak</h2>
-            <a href="./demo.json">JSON-fil</a>
+            <a href="./demo.json" target="_blank">JSON-fil</a>
     </footer>
     </main>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="checkout.js"></script>
 </body>

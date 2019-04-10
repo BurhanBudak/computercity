@@ -37,9 +37,6 @@ html {
     display: grid;
     grid-template-columns: 2fr auto ;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 3;
 }
 /*checkout*/
 .checkout{

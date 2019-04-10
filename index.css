@@ -59,7 +59,7 @@ html {
 /*Footer*/
 .footer{
     grid-column: 1/-1;
-    color: aliceblue;
+    color: white;
     background-color: teal;
 }
 /* List*/

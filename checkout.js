@@ -4,31 +4,42 @@ $(document).ready(function(){
      $table = $('#table');
      $total = $('#total');
      $submit = $('.btn');
+     $form = $('.needs-validation');
+    let $name = $('#name');
+    let $number = $('#number');
+    let $email = $('#email');
+    let $adress = $('#adress');
 
-   //   $submit.click('click', function(e){
-   //      e.preventDefault();
-   //   });
-     (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        let forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        let validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
+    function validate(){
+      //Email validering
+      let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+       ($name.val() === '' || $name.val().length < 3 || $.isNumeric($name.val())) ?
+         $name.siblings('.invalid-feedback').show() :
+         $name.siblings('.invalid-feedback').hide();
+         ($number.val() === '' || $number.val().length < 10 || isNaN($number.val())) ?
+         $number.siblings('.invalid-feedback').show() :
+         $number.siblings('.invalid-feedback').hide();
+         (!reg.test($email.val())) ?
+         $email.siblings('.invalid-feedback').show() :
+         $email.siblings('.invalid-feedback').hide();
+         ($adress.val() ==='') ?
+         $adress.siblings('.invalid-feedback').show() :
+         $adress.siblings('.invalid-feedback').hide();
+      
+  };
+  $submit.click('click', function (e) {
+    validate();
+    e.preventDefault();
+  })
 
+   
+
+  
+    
+   //Fyller på tabellen
     function fillList() {
         let total = 0;
-        for (let i = 0; i < localStorage.length; i++)  {      
+        for (let i = 0; i < localStorage.length; i++) {      
         let key = localStorage.key(i);
         let item = JSON.parse(localStorage.getItem(key))
         let subtotal = item.val * item.price;
@@ -37,13 +48,9 @@ $(document).ready(function(){
             `<tr id="${item.id}">
             <td> <img id="icon" src="${item.url}" alt="${item.name}"></td>
             <td>${item.name}</td>
-
             <td>${item.val} st</td>
-
             <td>${subtotal} kr</td> 
-
             </tr>`);
-            // $('#cartcount').text(count += Number(item.val));
     }
     $total.text(`Totalsumma: ${total} kr`);
     }

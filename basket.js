@@ -103,7 +103,6 @@ $(document).ready(function(){
     function addItem(key) {
         let item = JSON.parse(localStorage.getItem(`${key}`));
         let total = item.val * item.price;
-        $('#message').hide();
             $table.append(
                 `<tr id="${item.id}">
                 <td><button class="btn btn-outline-danger btn-sm" type="button" id="removeBtn"><i class="far fa-trash-alt"></i></button></td>
@@ -115,8 +114,7 @@ $(document).ready(function(){
                     <p id="total">${item.name}: ${total} kr</p>
                 </figcaption>
                 </figure></td>
-                </tr>`)
-    }
+                </tr>`)}
         
 
     
@@ -127,18 +125,27 @@ $(document).ready(function(){
     });
     //Tar bort vald rad
     $table.on('click', 'button#removeBtn', function () {
+        //Knappens närmaste tr och id
         $id = $(this).parents('tr').attr('id');
+        //Input värdet
         $value = $('td input#qty').val();
+        //Korg indikatorn
         $cartcount.text(count -= Number($value));
+        //Ta bort raden
         $(this).parents('tr').remove();
+        //radera den specifika nykeln med samma id som tr
         localStorage.removeItem($id);
         check();
     });
     //Lägger till
     $table.on('click', 'button#plus', function(){
+        //Knappens närmaste tr och id
         $id = $(this).parents('tr').attr('id');
+        //Input värde
         let $qty = $(this).parents('tr').find('input#qty');
+        //Total värdet
         let $total = $(this).parents('tr').find('#total');
+        //parse av JSON strängen, item är ett temporär värde
         let item = JSON.parse(localStorage.getItem($id));
         item.val +=1;
         let total = call(item.val, item.price)
