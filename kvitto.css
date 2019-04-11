@@ -21,10 +21,6 @@ html {
     height: 200px;
     width: 200px;
 }
-#icon{
-    height: 40px;
-    width: 40px;
-}
 /*Header*/
 .header{
     grid-column: 1/-1;
@@ -39,6 +35,8 @@ html {
 }
 #kvitto{
     margin: auto;
+    align-self: center;
+    justify-self: center;
 }
 /*Footer*/
 .footer{

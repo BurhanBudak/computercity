@@ -24,6 +24,7 @@ $(document).ready(function(){
          }
          else{
           $('#name').siblings('.invalid-feedback').hide();
+          $('a').attr('href', 'kvitto.html');
          }
          if ($number === '' || $number.length < 10 || isNaN($number)){
           $('#number').siblings('.invalid-feedback').show();
@@ -31,6 +32,7 @@ $(document).ready(function(){
          }
          else{
           $('#number').siblings('.invalid-feedback').hide();
+          $('a').attr('href', 'kvitto.html');
          }
          if(!reg.test($email) || $email.length < 5) {
           $('#email').siblings('.invalid-feedback').show();
@@ -38,6 +40,7 @@ $(document).ready(function(){
          }
          else{
           $('#email').siblings('.invalid-feedback').hide();
+          $('a').attr('href', 'kvitto.html');
          }
          if($adress === ''){
           $('#adress').siblings('.invalid-feedback').show();
