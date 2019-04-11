@@ -5,32 +5,50 @@ $(document).ready(function(){
      $total = $('#total');
      $submit = $('.btn');
      $form = $('.needs-validation');
-    let $name = $('#name');
-    let $number = $('#number');
-    let $email = $('#email');
-    let $adress = $('#adress');
+     $message = $('.message');
 
-    function validate(){
-      //Email validering
-      let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-       ($name.val() === '' || $name.val().length < 3 || $.isNumeric($name.val())) ?
-         $name.siblings('.invalid-feedback').show() :
-         $name.siblings('.invalid-feedback').hide();
-         ($number.val() === '' || $number.val().length < 10 || isNaN($number.val())) ?
-         $number.siblings('.invalid-feedback').show() :
-         $number.siblings('.invalid-feedback').hide();
-         (!reg.test($email.val())) ?
-         $email.siblings('.invalid-feedback').show() :
-         $email.siblings('.invalid-feedback').hide();
-         ($adress.val() ==='') ?
-         $adress.siblings('.invalid-feedback').show() :
-         $adress.siblings('.invalid-feedback').hide();
-      
-  };
-  $submit.click('click', function (e) {
-    validate();
-    e.preventDefault();
-  })
+
+    
+      $form.submit(function (e) {
+        e.preventDefault();
+        let $name = $('#name').val();
+        let $number = $('#number').val();
+        let $email = $('#email').val();
+        let $adress = $('#adress').val();
+        //Email validering
+        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  
+         if($name === '' || $name.length < 3 || $.isNumeric($name)){
+          $('#name').siblings('.invalid-feedback').show();
+          e.preventDefault();
+         }
+         else{
+          $('#name').siblings('.invalid-feedback').hide();
+         }
+         if ($number === '' || $number.length < 10 || isNaN($number)){
+          $('#number').siblings('.invalid-feedback').show();
+          e.preventDefault();
+         }
+         else{
+          $('#number').siblings('.invalid-feedback').hide();
+         }
+         if(!reg.test($email) || $email.length < 5) {
+          $('#email').siblings('.invalid-feedback').show();
+          e.preventDefault();
+         }
+         else{
+          $('#email').siblings('.invalid-feedback').hide();
+         }
+         if($adress === ''){
+          $('#adress').siblings('.invalid-feedback').show();
+          e.preventDefault();
+         }
+         else{
+          $('#adress').siblings('.invalid-feedback').hide();
+          $('a').attr('href', 'kvitto.html');
+         }
+
+        });
 
    
 
@@ -55,4 +73,6 @@ $(document).ready(function(){
     $total.text(`Totalsumma: ${total} kr`);
     }
    fillList()
+  
+
 });

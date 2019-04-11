@@ -59,6 +59,7 @@ html {
 /*Footer*/
 .footer{
     grid-column: 1/-1;
+    grid-row-end: auto;
     color: white;
     background-color: teal;
 }
