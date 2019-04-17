@@ -16,10 +16,9 @@ html {
     justify-content: space-around;
     align-content: space-around;
 }
-
-.rounded{
-    height: 200px;
-    width: 200px;
+#icon{
+    height: 40px;
+    width: 40px;
 }
 /*Header*/
 .header{
@@ -34,6 +33,7 @@ html {
     z-index: 3;
 }
 #kvitto{
+    grid-column: 1/-1;
     margin: auto;
     align-self: center;
     justify-self: center;

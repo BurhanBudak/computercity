@@ -3,6 +3,7 @@ $(document).ready(function(){
      $table = $('#table');
      $total = $('#total');
      $ref = $('#ref');
+     $toIndex = $('#toIndex');
      fillList();
     //Fyller på tabellen
     function fillList() {
@@ -23,8 +24,9 @@ $(document).ready(function(){
     }
     $ref.text(`Beställningsreference: ${number}`);
     $total.text(`Totalsumma: ${total} kr`);
-    localStorage.clear();
     }
-   
+   $toIndex.click('click', function(){
+    localStorage.clear();
+   });
   
 });
